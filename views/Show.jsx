@@ -13,6 +13,12 @@ class Show extends React.Component {
         Price: ${product.price}<br />
         Quantity: {product.qty}<br />
         Seller: {product.seller}<br />
+
+        <a href={`/products/${product._id}/edit`}>Edit This Listing</a><br />
+        <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
+          <input type="submit" value="DELETE"/>
+        </form>
+        <a href={`/products/`}>Back to Listings</a><br />
       </DefaultLayout>
     )
   }
