@@ -14,12 +14,18 @@ class DefaultLayout extends React.Component {
           <link rel="stylesheet" href="/css/app.css" />
         </head>
         <body>
-          <h1>{this.props.title}</h1>
-          {/* This is the start where the page content will be interjected  */}
+          <header>
+            <a href="/products"><div id="logo">Bei's Hay</div></a>
+            <div id="utility">Cart</div>
+          </header>
+          <main>
+            <h1>{this.props.title}</h1>
+            {/* This is the start where the page content will be interjected  */}
 
-          {this.props.children}
+            {this.props.children}
 
-          {/* This is the end where the page content will be interjected  */}
+            {/* This is the end where the page content will be interjected  */}
+          </main>
         </body>
       </html>
     )

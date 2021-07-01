@@ -7,18 +7,25 @@ class Show extends React.Component {
 
     return (
       <DefaultLayout title={"Hay for Sale"}>
-        <img src={product.image} /><br />
-        Type: {product.type}<br />
-        Sold By The: {product.unit}<br />
-        Price: ${product.price}<br />
-        Quantity: {product.qty}<br />
-        Seller: {product.seller}<br />
+        <div className="detailCard" key={product._id}>
+          <div className="productShot"><img src={`${product.image}`} /></div>
+          <div className="productInfo">
+            <label>Type:</label><div className="desc">{product.type}</div>
+            <label>Sold By The:</label><div className="desc">{product.unit}</div>
+            <label>Price:</label><div className="desc">${product.price}</div>
+            <label>Quantity:</label><div className="desc">{product.qty}</div>
+            <label>Seller:</label><div className="desc">{product.seller}</div>
+          </div>
+          <div className="cardFunctions">
+            <button><a href={`/products/${product._id}/edit`}>Edit</a></button>
+            <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
+              <button type="submit" value="DELETE">Delete</button>
+              </form>
+          </div>
+          <button>Buy</button>
+        </div>
 
-        <a href={`/products/${product._id}/edit`}>Edit This Listing</a><br />
-        <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
-          <input type="submit" value="DELETE"/>
-        </form>
-        <a href={`/products/`}>Back to Listings</a><br />
+        <a href={`/products/`}>Back to Listings</a>
       </DefaultLayout>
     )
   }
