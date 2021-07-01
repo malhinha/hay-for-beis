@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>New Hay for Sale</title>
-  </head>
-  <body>
-      <h1>Add a New Listing</h1>
+<head>
+  <meta charset="utf-8">
+  <title>New Hay for Sale</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header>
+    <div id="logo">Bei's Hay</div>
+    <div id="utility">Cart</div>
+  </header>
+  <main>
+    <h1>Add a New Listing</h1>
+    <div class="card" id="form">
       <form action="/products" method="POST">
-        <label>Type:</label> <input type="text" name="type" /><br/>
-        <label>Sold By The:</label> <input type="text" name="unit" /><br/>
-        <label>Image:</label> <input type="text" name="image" /><br/>
-        <label>Price:</label> <input type="text" name="price" /><br/>
-        <label>Quantity:</label> <input type="text" name="qty" /><br/>
-        <label>Seller:</label> <input type="text" name="seller" /><br/>
-        <input type="submit" name="" value="Create Listing"/>
+        <label>Type:</label> <input type="text" name="type" />
+        <label>Sold By The:</label> <input type="text" name="unit" />
+        <label>Image:</label> <input type="text" name="image" />
+        <label>Price:</label> <input type="text" name="price" />
+        <label>Quantity:</label> <input type="text" name="qty" />
+        <label>Seller:</label> <input type="text" name="seller" />
+        <button type="submit" name="" value="Create Listing">Create Listing</button>
       </form>
-  </body>
+    </div>
+  </main>
+</body>
 </html>
