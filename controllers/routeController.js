@@ -24,4 +24,10 @@ router.get('/:id/edit', dataController.show, viewController.edit);
 // SHOW
 router.get('/:id', dataController.show, viewController.show);
 
+// SEED
+router.get('/seed', dataController.seed, viewController.redirectHome);
+
+// BUY
+router.get('/:id/buy', dataController.buy, viewController.redirectHome);
+
 module.exports = router;

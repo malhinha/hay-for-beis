@@ -20,9 +20,15 @@ class Show extends React.Component {
             <button><a href={`/products/${product._id}/edit`}>Edit</a></button>
             <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
               <button type="submit" value="DELETE">Delete</button>
-              </form>
+            </form>
           </div>
-          <button>Buy</button>
+          {
+            product.qty
+            ? <form action={`/products/${product._id}/buy`}>
+               <button type="submit" value="BUY">Buy</button>
+              </form>
+            : <div id="sold-out">Sold Out</div>
+          }
         </div>
 
         <a href={`/products/`}>Back to Listings</a>

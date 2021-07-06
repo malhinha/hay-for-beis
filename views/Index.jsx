@@ -7,8 +7,11 @@ class Index extends React.Component {
 
     return(
       <DefaultLayout title={"Buy Hay from your Bei today!"}>
-      <div id="gallery">
-        {
+        <nav>
+          <a href="/products/new">Add a New Listing</a>
+        </nav>
+        <div id="gallery">
+          {
           products.map((product) => {
             return (
               <div className="card" key={product._id}>
@@ -23,11 +26,8 @@ class Index extends React.Component {
               </div>
             );
           })
-        }
-      </div>
-      <nav>
-        <a href="/products/new">Add a New Listing</a>
-      </nav>
+          }
+        </div>
       </DefaultLayout>
     );
   }

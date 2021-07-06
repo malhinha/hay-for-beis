@@ -168,7 +168,7 @@ label, .key {
 
 #gallery {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
@@ -187,4 +187,18 @@ label, .key {
 .productShot > img {
   width: auto;
   height: 100%;
+}
+
+#sold-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  margin: 0;
+  padding: 20px 10px;
+  border: 0 none;
+  width: 100%;
+  height: auto;
+  font-weight: 500;
+  text-transform: uppercase;
 }
