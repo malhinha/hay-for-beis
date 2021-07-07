@@ -24,7 +24,7 @@ class Show extends React.Component {
           </div>
           {
             product.qty
-            ? <form action={`/products/${product._id}/buy`}>
+            ? <form action={`/products/${product._id}/buy`} id="buy">
                <button type="submit" value="BUY">Buy</button>
               </form>
             : <div id="sold-out">Sold Out</div>
