@@ -16,7 +16,10 @@ class DefaultLayout extends React.Component {
         <body>
           <header>
             <a href="/products"><div id="logo">Bei's Hay</div></a>
-            <div id="utility">Cart</div>
+            <div id="utility">
+              <div>Cart</div>
+              <div className="cart-count"></div>
+            </div>
           </header>
           <main>
             <h1>{this.props.title}</h1>
