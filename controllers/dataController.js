@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const Buyer = require('../models/buyer');
 
 const dataController = {
   index(req, res, next) {
@@ -80,7 +81,7 @@ const dataController = {
   },
 
   seed(req, res, next) {
-    Product.create([
+    const newListings = [
       {
         type: 'Timothy Grass',
         unit: 'Bale, Square',
@@ -104,19 +105,20 @@ const dataController = {
         price: 20,
         qty: 10,
         seller: 'V Bayer'
-      },
-      {
-        type: 'Rye Grass',
-        unit: 'Bale, Round',
-        image: 'https://haymap.com/wp-content/uploads/2020/05/1590109863925img-768x768.jpeg',
-        price: 7.5,
-        qty: 50,
-        seller: 'Matt Miller'
       }
-    ], (err, data) =>{
-      res.redirect('/products');
+    ];
+
+    Product.create(newListings, (err, createdProduct) => {
+      if(err) {
+        res.status(404).send({
+          msg: err.message
+        })
+      } else {
+        res.locals.data.product = createdProduct;
+        next()
+      }
     })
-  }
+  },
 }
 
 module.exports = dataController;
